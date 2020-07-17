@@ -2,7 +2,8 @@ import ReusableForm from './ReusableForm';
 import PropTypes from 'prop-types';
 import { useFirestore } from 'react-redux-firebase';
 import React from 'react';
-
+import * as a from "../actions";
+import { connect } from "react-redux";
 
 
 
@@ -12,7 +13,7 @@ function EditItem(props){
   
   function editItemFormSubmission(event) {
     event.preventDefault();
-    //props.editItem();
+    dispatch(a.editItem());
 
     const propertiesToUpdate = {
       title: event.target.title.value,
@@ -25,14 +26,22 @@ function EditItem(props){
   return (
     <React.Fragment>
       <ReusableForm
-        formSubmissionHandler={editItemFormSubmission}
+        formSubmission={editItemFormSubmission}
         buttonText="flash card list"/>
     </React.Fragment>
   )
 }
 
 EditItem.propTypes = {
-
+  selectedItem: PropTypes.string,
+  editing: PropTypes.bool
 };
 
-export default EditItem; 
+const mapStateToProps = state => {
+  return {
+    selectedItem: state.selectedItem,
+    editing: state.editing
+  }
+};
+
+export default connect()(EditItem); 
