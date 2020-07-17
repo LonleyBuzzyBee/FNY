@@ -44,4 +44,4 @@ const mapStateToProps = state => {
   }
 };
 
-export default connect()(EditItem); 
+export default connect(mapStateToProps)(EditItem); 

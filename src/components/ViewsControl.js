@@ -86,6 +86,6 @@ const mapStateToProps = state => {
   }
 }
 
-ViewsControl = connect()(ViewsControl);
+ViewsControl = connect(mapStateToProps)(ViewsControl);
 
 export default withFirestore(ViewsControl);

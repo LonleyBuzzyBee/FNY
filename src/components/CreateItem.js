@@ -39,4 +39,4 @@ const mapStateToProps = state => {
   } 
 }
 
-export default connect()(CreateItem);
+export default connect(mapStateToProps)(CreateItem);
