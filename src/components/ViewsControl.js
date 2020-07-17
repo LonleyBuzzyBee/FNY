@@ -1,53 +1,53 @@
 import React from 'react';
 import CreateItem from './CreateItem';
-import ItemList from './itemList';
-import Home from './Home';
+import ItemList from './ItemList';
 import ItemDetail from './FlashItemDetail';
 import EditItem from './EditItem';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import * as a from './../actions';
 import { withFirestore } from 'react-redux-firebase';
+import LandingPage from './LandingPage';
 
 
-class HomePage extends React.Component {
+class ViewsControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
     }
   }
 
-  handleClickAddItem = () => {
+  addItem = () => {
     const { dispatch } = this.props;
-    dispatch(a.toggleForm());
+    dispatch(a.seeForm());
   }
 
   handleClick = () => {
     const { dispatch } = this.props;
     if (this.props.selectedItem != null) {
-       dispatch(a.setSelectedItem(null));
+       dispatch(a.selectedItem(null));
     } 
     if (this.props.formVisibleOnPage) {
-      dispatch(a.toggleForm());
+      dispatch(a.seeForm());
     }
-    if (this.props.homePageVisible){
-      this.handleHomePageVisible();
+    if (this.props.landingPageVisible){
+      this.landingPageVisible();
     }
   }
 
-  handleHomePageVisible = () => {
+  landingPageVisible = () => {
     const { dispatch } = this.props;
-    dispatch(a.toggleHomePage());
+    dispatch(a.seeLanding());
   }
 
   render() {
     let currentlyVisibleState = null;
-    let buttonText = "Return to Flash Item List";
+    let buttonText = "Return to Products List";
     let buttonClick = this.handleClick;
    
-    if (this.props.homePageVisible) {
+    if (this.props.landingPageVisible) {
       currentlyVisibleState =
-        <Home />
+        <LandingPage />
         
     }else if (this.props.editing) { // editing: true, selectedItem: some ID
     currentlyVisibleState = <EditItem/>        
@@ -57,35 +57,35 @@ class HomePage extends React.Component {
       currentlyVisibleState = <CreateItem />;
     } else {
       currentlyVisibleState = <ItemList />;   
-      buttonText = "Add Post";
-      buttonClick = this.handleClickAddItem;
+      buttonText = "Add Item";
+      buttonClick = this.addItem;
     }
     return (
       <React.Fragment>
         {currentlyVisibleState}
         <button onClick={buttonClick}>{buttonText}</button>
-        <button onClick={this.handleHomePageVisible}>Return to Home Page</button>
+        <button onClick={this.landingPageVisible}>Return to Home Page</button>
       </React.Fragment>
     );
   }
 }
 
-HomePage.propTypes = {
-  selectedItem: PropTypes.string,
+ViewsControl.propTypes = {
+  landingPageVisible: PropTypes.bool,
   formVisibleOnPage: PropTypes.bool,
-  homePageVisible: PropTypes.bool,
+  selectedItem: PropTypes.string,
   editing: PropTypes.bool
 };
 
 const mapStateToProps = state => {
   return {
+    landingPageVisible: state.landingPageVisible,
+    formVisibleOnPage: state.formVisibleOnPage,
     selectedItem: state.selectedItem,
-    editing: state.editing,
-    homePageVisible: state.homePageVisible,
-    formVisibleOnPage: state.formVisibleOnPage
+    editing: state.editing
   }
 }
 
-HomePage = connect(mapStateToProps)(HomePage);
+ViewsControl = connect()(ViewsControl);
 
-export default withFirestore(HomePage);
+export default withFirestore(ViewsControl);
