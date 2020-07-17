@@ -19,10 +19,10 @@ _{This is a detailed description of your application. Its purpose and usage.  Gi
 
 | Behavior | Input | Output |
 |---|---|---|
-|   |   |   |
-|   |   |   |
-|   |   |   |
-|   |   |   |
+|a user can see an item|a user clicks an item|details list shows up for item |
+|a user can see a list of items for sale|a user clicks shop now| a user sees all items|
+| a vendor has access to full crud funtionality | a vendor signs in |all views and buttons for CRUD functionality show|
+|a user can only see details and list of items |  |   |
 
 ## Setup/Installation Requirements
 
