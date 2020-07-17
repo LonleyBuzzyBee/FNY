@@ -15,7 +15,7 @@ function Item(props) {
   );
 }
 
-Card.propTypes = {
+Item.propTypes = {
   title: PropTypes.string,
   category: PropTypes.string,
   description: PropTypes.string
