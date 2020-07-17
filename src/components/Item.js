@@ -8,7 +8,7 @@ function Item(props) {
   const { dispatch } = props;
   return (
     <React.Fragment>
-      <div onClick={() => dispatch(a.setSelectedItem(props.id))}>
+      <div onClick={() => dispatch(a.selectedItem(props.id))}>
         <h3>{props.title} - {props.category}</h3>
       </div>
     </React.Fragment>

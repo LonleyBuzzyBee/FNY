@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useFirestore} from 'react-redux-firebase'
 import ReusableForm from './ReusableForm';
+import * as a from "../actions";
+import { connect } from "react-redux";
 
 
 function CreateItem(props) {

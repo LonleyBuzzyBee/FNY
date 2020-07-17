@@ -17,7 +17,7 @@ function ItemDetail(props){
   
   function deletingItem(id) {
     firestore.delete({collection: 'items', doc: id});
-    dispatch(a.setSelectedItem(null));
+    dispatch(a.selectedItem(null));
   }
 
   const item = useSelector(state => state.firestore.ordered.items)[0];
