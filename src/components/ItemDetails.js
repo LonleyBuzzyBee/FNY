@@ -17,7 +17,6 @@ function ItemDetail(props){
   
   function deletingItem(id) {
     firestore.delete({collection: 'items', doc: id});
-    //Return to Item list mode: what variables/reducers need to be updated?
     dispatch(a.setSelectedItem(null));
   }
 
@@ -30,8 +29,8 @@ function ItemDetail(props){
   if (isLoaded(item)) {
   return (
     <React.Fragment>
-        <h3>{Item.title} - {Item.category}</h3>
-        <p> {Item.content} </p>
+        <h3>{item.title} - {item.category}</h3>
+        <p> {item.content} </p>
       <button onClick={editItem}>edit this thing</button>
       <button onClick={() => deletingItem(props.selectedItem)}>delete this thing</button>
     </React.Fragment>
