@@ -1,7 +1,7 @@
 import React from 'react';
 import CreateItem from './CreateItem';
 import ItemList from './ItemList';
-import ItemDetail from './FlashItemDetail';
+import ItemDetail from './ItemDetails';
 import EditItem from './EditItem';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';

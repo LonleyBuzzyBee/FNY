@@ -1,4 +1,4 @@
-export const seeLandingPage = () => ({
+export const seeLanding = () => ({
   type: 'SEE_LANDING'
 });
 export const seeForm = () => ({
