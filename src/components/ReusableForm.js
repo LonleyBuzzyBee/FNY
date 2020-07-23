@@ -15,6 +15,11 @@ function ReusableForm(props) {
           name='category'
           placeholder='Category'
         />
+        <input
+          type='text'
+          name='img'
+          placeholder='image path'
+        />
         <textarea
           type='text'
           name='description'

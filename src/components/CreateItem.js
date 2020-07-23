@@ -16,7 +16,8 @@ function CreateItem(props) {
       {
         title: event.target.title.value,
         category: event.target.category.value,
-        description: event.target.description.value
+        description: event.target.description.value,
+        img: event.target.img.value
       }
     );
   }

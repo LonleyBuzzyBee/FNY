@@ -18,7 +18,8 @@ function Item(props) {
 Item.propTypes = {
   title: PropTypes.string,
   category: PropTypes.string,
-  description: PropTypes.string
+  description: PropTypes.string,
+  img: PropTypes.string
   
 };
 

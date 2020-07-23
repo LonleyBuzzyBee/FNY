@@ -18,7 +18,8 @@ function EditItem(props){
     const propertiesToUpdate = {
       title: event.target.title.value,
       category: event.target.category.value,
-      content: event.target.description.value
+      content: event.target.description.value,
+      img: event.target.img.value
     }
     return firestore.update({collection: 'items', doc: props.selectedItem }, propertiesToUpdate)
   }
