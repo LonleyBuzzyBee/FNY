@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect, useReducer } from 'react';
 import CreateItem from './CreateItem';
 import ItemList from './ItemList';
 import ItemDetail from './ItemDetails';
@@ -10,12 +10,22 @@ import { withFirestore } from 'react-redux-firebase';
 import LandingPage from './LandingPage';
 
 
-class ViewsControl extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-    }
-  }
+// class ViewsControl extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {
+//     }
+//   }
+//     landingPageVisible: state.landingPageVisible,
+//     formVisibleOnPage: state.formVisibleOnPage,
+//     selectedItem: state.selectedItem,
+//     editing: state.editing
+
+function ViewsControl () {
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+
+
 
   addItem = () => {
     const { dispatch } = this.props;
@@ -77,14 +87,14 @@ ViewsControl.propTypes = {
   editing: PropTypes.bool
 };
 
-const mapStateToProps = state => {
-  return {
-    landingPageVisible: state.landingPageVisible,
-    formVisibleOnPage: state.formVisibleOnPage,
-    selectedItem: state.selectedItem,
-    editing: state.editing
-  }
-}
+// const mapStateToProps = state => {
+//   return {
+//     landingPageVisible: state.landingPageVisible,
+//     formVisibleOnPage: state.formVisibleOnPage,
+//     selectedItem: state.selectedItem,
+//     editing: state.editing
+//   }
+// }
 
 ViewsControl = connect(mapStateToProps)(ViewsControl);
 
