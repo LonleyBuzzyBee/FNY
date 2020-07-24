@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import * as a from "../actions";
 import { connect } from "react-redux";
+// import *  as img from './assets/imgs';
 
 
 function Item(props) {
@@ -10,6 +11,7 @@ function Item(props) {
     <React.Fragment>
       <div onClick={() => dispatch(a.selectedItem(props.id))}>
         <h3>{props.title} - {props.category}</h3>
+        <img src={props.img} alt="img" />
       </div>
     </React.Fragment>
   );

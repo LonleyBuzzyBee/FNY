@@ -31,7 +31,8 @@ function ItemDetail(props){
     <React.Fragment>
         <h3>{item.title} - {item.category}</h3>
         <p> {item.content} </p>
-        <p> {item.img} </p>
+      <p>  </p>
+      <img src={item.img} alt="img"/>
       <button onClick={editItem}>edit this thing</button>
       <button onClick={() => deletingItem(props.selectedItem)}>delete this thing</button>
     </React.Fragment>
