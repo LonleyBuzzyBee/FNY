@@ -24,7 +24,9 @@ import rootReducer from '../reducers/index';
 
 const initialState = { landingPageVisible: false, formVisibleOnPage: false, selectedItem: null, editing: false };
 
-const 
+const landingPage = () => ({ type: "SEE_LANDING" });
+const formShow = () => ({ type: "SEE_FORM" });
+const item = () => ({ type: "SElECTED_ITEM" });
 function ViewsControl () {
   const [state, dispatch] = useReducer(rootReducer, initialState);
 
@@ -53,6 +55,8 @@ function ViewsControl () {
     const { dispatch } = this.props;
     dispatch(a.seeLanding());
   }
+
+
 
   // render() {
   //   let currentlyVisibleState = null;
