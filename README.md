@@ -38,7 +38,8 @@ _In Terminal:_
 * then ```npm build```
 * finally ```npm start```
 
-
+## Tasks
+* 8 - 9:30 ish readt through react strap, ant design and ui kit documentation
 ## Known Bugs
 
 _No known bugs at this time._
