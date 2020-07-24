@@ -27,34 +27,40 @@ const initialState = { landingPageVisible: false, formVisibleOnPage: false, sele
 const landingPage = () => ({ type: "SEE_LANDING" });
 const formShow = () => ({ type: "SEE_FORM" });
 const item = () => ({ type: "SElECTED_ITEM" });
-function ViewsControl () {
+const edit = () => ({ type: "EDIT_ITEM" });
+
+function ViewsControl() {
   const [state, dispatch] = useReducer(rootReducer, initialState);
 
+  return (
+    <>
+    </>
+  );
+}
 
 
+  // addItem = () => {
+  //   const { dispatch } = this.props;
+  //   dispatch(a.seeForm());
+  // }
 
-  addItem = () => {
-    const { dispatch } = this.props;
-    dispatch(a.seeForm());
-  }
+  // handleClick = () => {
+  //   const { dispatch } = this.props;
+  //   if (this.props.selectedItem != null) {
+  //      dispatch(a.selectedItem(null));
+  //   } 
+  //   if (this.props.formVisibleOnPage) {
+  //     dispatch(a.seeForm());
+  //   }
+  //   if (this.props.landingPageVisible){
+  //     this.landingPageVisible();
+  //   }
+  // }
 
-  handleClick = () => {
-    const { dispatch } = this.props;
-    if (this.props.selectedItem != null) {
-       dispatch(a.selectedItem(null));
-    } 
-    if (this.props.formVisibleOnPage) {
-      dispatch(a.seeForm());
-    }
-    if (this.props.landingPageVisible){
-      this.landingPageVisible();
-    }
-  }
-
-  landingPageVisible = () => {
-    const { dispatch } = this.props;
-    dispatch(a.seeLanding());
-  }
+  // landingPageVisible = () => {
+  //   const { dispatch } = this.props;
+  //   dispatch(a.seeLanding());
+  // }
 
 
 
@@ -86,7 +92,7 @@ function ViewsControl () {
   //     </React.Fragment>
   //   );
   // }
-}
+
 
 // ViewsControl.propTypes = {
 //   landingPageVisible: PropTypes.bool,
