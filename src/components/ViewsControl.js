@@ -32,11 +32,38 @@ const edit = () => ({ type: "EDIT_ITEM" });
 function ViewsControl() {
   const [state, dispatch] = useReducer(rootReducer, initialState);
 
+  
+  let currentlyVisibleState = null;
+  let buttonText = "Return to Products List";
+  let buttonClick = this.handleClick;
+  
+  if (this.props.landingPageVisible) {
+    currentlyVisibleState =
+    <LandingPage />
+    
+  }else if (this.props.editing) { /
+    currentlyVisibleState = <EditItem/>        
+  }else if (this.props.selectedItem != null) { 
+    currentlyVisibleState = <ItemDetail/>
+  }else if (this.props.formVisibleOnPage) { 
+    currentlyVisibleState = <CreateItem />;
+  } else {
+    currentlyVisibleState = <ItemList />;
+  }
+  //     return (
+    //       <React.Fragment>
+    //         {currentlyVisibleState}
+    //         <button onClick={buttonClick}>{buttonText}</button>
+    //         <button onClick={this.landingPageVisible}>Return to Home Page</button>
+    //       </React.Fragment>
+    // );
   return (
-    <>
-    </>
-  );
-}
+    <di>
+    </di>
+    );
+  }
+  
+  
 
 
   // addItem = () => {
