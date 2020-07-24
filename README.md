@@ -40,6 +40,7 @@ _In Terminal:_
 
 ## Tasks
 * 8 - 9:30 ish readt through react strap, ant design and ui kit documentation
+* 3 look up doc on how to refactor to hooks
 ## Known Bugs
 
 _No known bugs at this time._
