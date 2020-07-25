@@ -33,19 +33,19 @@ function ViewsControl() {
   const [state, dispatch] = useReducer(rootReducer, initialState);
 
   
-  let currentlyVisibleState = null;
-  let buttonText = "Return to Products List";
-  let buttonClick = this.handleClick;
+  // let currentlyVisibleState = null;
+  // let buttonText = "Return to Products List";
+  // let buttonClick = this.handleClick;
   
-  if (this.props.landingPageVisible) {
+  if (landingPageVisible) {
     currentlyVisibleState =
     <LandingPage />
     
-  }else if (this.props.editing) { /
+  }else if (editing) { /
     currentlyVisibleState = <EditItem/>        
-  }else if (this.props.selectedItem != null) { 
+  }else if (selectedItem != null) { 
     currentlyVisibleState = <ItemDetail/>
-  }else if (this.props.formVisibleOnPage) { 
+  }else if (formVisibleOnPage) { 
     currentlyVisibleState = <CreateItem />;
   } else {
     currentlyVisibleState = <ItemList />;
