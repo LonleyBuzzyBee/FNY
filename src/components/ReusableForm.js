@@ -1,18 +1,19 @@
-import React from "react";
+import React, {useState} from "react";
 import PropTypes from "prop-types";
-import {storage} from "../firebase"
+import { storage } from "../firebase"
+
 
 function ReusableForm(props) {
 
-  // const allInputs = {imgUrl: ''}
-  // const [imageAsFile, setImageAsFile] = useState('')
+  const allInputs = {imgUrl: ''}
+  const [imageAsFile, setImageAsFile] = useState('')
   // const [imageAsUrl, setImageAsUrl] = useState(allImputs)
   
-//   console.log(imageAsFile)
-//  const handleImageAsFile = (e) => {
-//       const image = e.target.files[0]
-//       setImageAsFile(imageFile => (image))
-//   }
+  console.log(imageAsFile)
+ const handleImageAsFile = (e) => {
+      const image = e.target.files[0]
+      setImageAsFile(imageFile => (image))
+  }
 
   // const handleFireBaseUpload = e => {
   //   e.preventDefault()
@@ -41,8 +42,8 @@ function ReusableForm(props) {
           placeholder='Category'
         />
         <input
-          type='text'
-          
+          type='file'
+          onChange={handleImageAsFile}
           name='img'
           placeholder='image path'
         />

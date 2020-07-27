@@ -1,10 +1,9 @@
 import React from "react";
-import PropTypes from "prop-types";
 import Item from "./Item";
 import { useSelector } from 'react-redux';
 import { useFirestoreConnect, isLoaded, isEmpty } from 'react-redux-firebase';
 
-function ItemList(props) {
+function ItemList() {
   useFirestoreConnect([
     {
       collection: 'items'
@@ -37,7 +36,6 @@ function ItemList(props) {
   }
 }
 
-ItemList.propTypes = {
-}
+
 
 export default ItemList;

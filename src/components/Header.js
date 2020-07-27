@@ -17,7 +17,7 @@ import {
   NavbarText
 } from 'reactstrap';
 
-const Header = (props) => {
+const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
@@ -63,11 +63,3 @@ const Header = (props) => {
 
 export default Header;
 
-  // function Header() {
-  //   return (
-  //     <React.Fragment>
-  //       <h2>FNY</h2>
-        
-  //     </React.Fragment>
-  //   )
-  // }

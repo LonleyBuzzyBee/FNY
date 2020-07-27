@@ -1,8 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import * as a from "../actions";
-import { connect } from "react-redux";
-// import *  as img from './assets/imgs';
 
 
 function Item(props) {
@@ -25,10 +23,4 @@ Item.propTypes = {
   
 };
 
-const mapStateToProps = state => {
-  return {
-
-  }
-};
-
-export default connect(mapStateToProps)(Item);
+export default Item;

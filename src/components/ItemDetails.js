@@ -2,15 +2,20 @@ import React from "react";
 import PropTypes from "prop-types";
 import { useFirestore, useFirestoreConnect, isLoaded } from 'react-redux-firebase';
 import * as a from "../actions";
-import { connect, useSelector } from "react-redux";
+import {  useSelector,useDispatch } from "react-redux";
 
-function ItemDetail(props){
+function ItemDetail(){
   const firestore = useFirestore(); 
-  const { dispatch } = props;
+  const dispatch = useDispatch();
+
+  const editing = useSelector(state => state.editing);
+
+  const selectedItem = useSelector(state => state.selectedItem);
+
   useFirestoreConnect([
     {
       collection: 'items',
-      doc: props.selectedItem
+      doc: selectedItem
     }
   ]);
   
@@ -34,7 +39,7 @@ function ItemDetail(props){
       <p>  </p>
       <img src={item.img} alt="img"/>
       <button onClick={editItem}>edit this thing</button>
-      <button onClick={() => deletingItem(props.selectedItem)}>delete this thing</button>
+      <button onClick={() => deletingItem(selectedItem)}>delete this thing</button>
     </React.Fragment>
   );
   } else {
@@ -46,17 +51,7 @@ function ItemDetail(props){
   }
 }
 
-ItemDetail.propTypes = {
-  selectedItem: PropTypes.string,
-  editing:PropTypes.bool
-};
-
-const mapStateToProps = state => {
-  return {
-    selectedItem: state.selectedItem,
-    editing: state.editing
-  }
-};
 
 
-export default connect(mapStateToProps)(ItemDetail);
+
+export default ItemDetail;
