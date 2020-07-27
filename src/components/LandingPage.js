@@ -67,7 +67,10 @@ const LandingPage = (props) => {
   });
 
   return (
-    <main>
+    <div>
+      <main className="landingMain">
+        <h1>here is main</h1>
+      </main>
       <Carousel
         activeIndex={activeIndex}
         next={next}
@@ -78,7 +81,8 @@ const LandingPage = (props) => {
         <CarouselControl direction="prev" directionText="Previous" onClickHandler={previous} />
         <CarouselControl direction="next" directionText="Next" onClickHandler={next} />
       </Carousel>
-    </main>
+    </div>
+    
   );
 }
 
