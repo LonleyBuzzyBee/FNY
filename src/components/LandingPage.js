@@ -7,7 +7,10 @@ import slide4 from './assets/imgs/foamy.jpg';
 import slide5 from './assets/imgs/pinkMoistureStand.jpg'
 import slide6 from './assets/imgs/pinkMoisture.jpg'
 import logoInt from './assets/imgs/logoNoC.png'
-import vegan from './assets/imgs/crultyFree.png'
+import vegan from './assets/imgs/vegan.png'
+import sulfate from './assets/imgs/sulfate.png'
+import derm from './assets/imgs/derm.png'
+import cruelty from './assets/imgs/cruelty.png'
 
 import React, { useState } from 'react';
 import {
@@ -99,7 +102,7 @@ const LandingPage = (props) => {
         key={item.src}
       >
         <img src={item.src} alt={item.altText} width={item.width} height={item.height}/>
-        <CarouselCaption captionText={item.caption} captionHeader={item.caption} />
+        <CarouselCaption  captionHeader={item.caption} />
       </CarouselItem>
     );
   });
@@ -111,7 +114,7 @@ const LandingPage = (props) => {
         key={item.src}
       >
         <img src={item.src} alt={item.altText} width={item.width} height={item.height}/>
-        <CarouselCaption captionText={item.caption} captionHeader={item.caption} />
+        <CarouselCaption captionHeader={item.caption} />
       </CarouselItem>
     );
   });
@@ -123,7 +126,7 @@ const LandingPage = (props) => {
         key={item.src}
       >
         <img src={item.src} alt={item.altText} width={item.width} height={item.height}/>
-        <CarouselCaption captionText={item.caption} captionHeader={item.caption} />
+        <CarouselCaption  />
       </CarouselItem>
     );
   });
@@ -136,6 +139,7 @@ const LandingPage = (props) => {
           <div className="introDiv">
             <img className="intro" src={logoInt} alt="fny logo" />
             <p className="intro-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad.</p>
+            <button>Shop Now</button>
           </div>
         </div>
       </main>
@@ -175,8 +179,13 @@ const LandingPage = (props) => {
           <CarouselControl direction="next" directionText="Next" onClickHandler={next} />
         </Carousel>
       </section>
-      <section>
-        <img src={vegan} alt="crulty free logos"/>
+
+      <section className="logos-section">
+        <img className="crueltyFreeLogos" src={vegan} alt="crulty free logos" />
+        <img className="crueltyFreeLogos" src={sulfate} alt="crulty free logos" />
+        <img className="crueltyFreeLogos" src={cruelty} alt="crulty free logos" />
+        <img className="crueltyFreeLogos" src={derm} alt="crulty free logos" />
+        
       </section>
 
     </div>

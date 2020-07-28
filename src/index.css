@@ -6,6 +6,7 @@ body {
   sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(240, 240, 240);
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -17,12 +18,10 @@ main{
   background-repeat: no-repeat;
   background-size: cover;
   height: 1000px;
-  margin-bottom: 50px;
-  /* border-bottom: solid black ; */
 }
 .introDiv-border{
   border: solid;
-  border-color: black;
+  border-color: rgb(0, 0, 0);
   margin-right: 150px;
   margin-top: 150px;
   padding:50px;
@@ -35,6 +34,10 @@ main{
   border-color: black;
   width: 500px;
   height: 500px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 }
 .intro{
   display: block;
@@ -45,19 +48,22 @@ main{
 }
 .intro-p{
   text-align: center;
-  margin:50px;
+  margin-top:50px;
+  margin-left:50px;
+  margin-right:50px;
 }
 .caroselSection{
   display: table;
   clear: both;
   border-spacing: 15px;
+  margin-bottom: 5%;
+  margin-top: 5%;
 }
 .caro{
   margin-left: 150px;
   margin-right: 150px;
   width: 300px;
   float: left;
-
 }
 Carousel{
   width: 300px;
@@ -68,11 +74,19 @@ CarouselItem{
 CarouselControl{
   width: 300px;
 }
-.carouselIndicators{
+.carousel-indicators{
   width: 300px;
-
+  display: none !important;
 }
-CarouselIndicators{
-  width: 300px;
 
+.logos-section{
+  background-color: white;
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding-left: 15%;
+  padding-top: 10%;
+  height: 600px;
+}
+.crueltyFreeLogos{
+  width: 100px;
 }
