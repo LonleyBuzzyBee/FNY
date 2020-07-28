@@ -23,22 +23,26 @@ function ViewsControl() {
   
   const dispatch = useDispatch();
   let currentlyVisibleState = null;
-  let buttonText = "Return to Products List";
+  let buttonText = "Go to item list";
   let buttonClick = null;
   
   if (landingPageVisible) {
     currentlyVisibleState =
     <LandingPage />;
-    buttonClick = () => dispatch(a.seeForm());
+    buttonClick = () => {
+      dispatch(a.hideLanding());
+    }
     
   }else if (editing) { 
     currentlyVisibleState = <EditItem />;
     buttonClick = () => dispatch(a.editItem());
+  
+  } else if (selectedItem != null) { 
     
-  }else if (selectedItem != null) { 
     currentlyVisibleState = <ItemDetail />;
     buttonClick = () => dispatch(a.selectedItem(null));
-    
+   
+
   }else if (formVisibleOnPage) { 
     currentlyVisibleState = <CreateItem />;
     buttonClick = () => dispatch(a.seeForm());
@@ -46,11 +50,9 @@ function ViewsControl() {
   } else {
     currentlyVisibleState = <ItemList />;
     buttonClick = () => dispatch(a.seeLanding())
-    
   }
-
     return (
-      <div>
+    <div>
       {currentlyVisibleState}
       <button onClick={buttonClick}>{buttonText}</button>
       <button onClick={() => dispatch(a.seeLanding())}>return to landing</button>

@@ -1,6 +1,9 @@
 export const seeLanding = () => ({
   type: 'SEE_LANDING'
 });
+export const hideLanding = () => ({
+  type: 'HIDE_LANDING'
+});
 export const seeForm = () => ({
   type: 'SEE_FORM'
 });
