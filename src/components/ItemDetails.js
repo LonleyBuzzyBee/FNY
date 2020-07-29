@@ -1,45 +1,54 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { useFirestore, useFirestoreConnect, isLoaded } from 'react-redux-firebase';
+import EditItem from './EditItem';
 import * as a from "../actions";
-import {  useSelector,useDispatch } from "react-redux";
+import {  useSelector,useDispatch, useEffect } from "react-redux";
 
 function ItemDetail(){
   const firestore = useFirestore(); 
   const dispatch = useDispatch();
 
-  const editing = useSelector(state => state.editing);
 
   const selectedItem = useSelector(state => state.selectedItem);
+  const editing = useSelector(state => state.editing);
+  console.log("HERE IT IS", selectedItem);
 
-  useFirestoreConnect([
-    {
-      collection: 'items',
-      doc: selectedItem
-    }
-  ]);
+  // useFirestoreConnect([
+  //   {
+  //     collection: 'items',
+  //     doc: selectedItem
+  //   }
+  // ]);
   
   
   function deletingItem(id) {
     firestore.delete({collection: 'items', doc: id});
     dispatch(a.selectedItem(null));
   }
+  console.log(selectedItem);
 
-  const item = useSelector(state => state.firestore.ordered.items)[0];
+  // const item = useSelector(state => state.firestore.ordered.items)[];
   
   function editItem() {
     dispatch(a.editItem());//edit-reducer set editing  
   }
-  
-  if (isLoaded(item)) {
+  if (editing) {
+    return (
+      <EditItem selectedItem={selectedItem}/>
+      
+    )
+  }
+  else if (isLoaded(selectedItem)) {
   return (
     <React.Fragment>
-        <h3>{item.title} - {item.category}</h3>
-        <p> {item.content} </p>
-      <p>  </p>
-      <img src={item.img} alt="img"/>
+        <h3>{selectedItem.title} - {selectedItem.category}</h3>
+        <p> {selectedItem.description} </p>
+   
+      <img src={selectedItem.img} alt="img"/>
       <button onClick={editItem}>edit this thing</button>
-      <button onClick={() => deletingItem(selectedItem)}>delete this thing</button>
+      <button onClick={() => deletingItem(selectedItem.id)}>delete this thing</button>
+      <button onClick={() => dispatch(a.selectedItem(null))}>go to list</button>
     </React.Fragment>
   );
   } else {

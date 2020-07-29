@@ -3,6 +3,8 @@ import Item from "./Item";
 import { useSelector } from 'react-redux';
 import { useFirestoreConnect, isLoaded, isEmpty } from 'react-redux-firebase';
 
+import ItemDetail from "./ItemDetails";
+
 function ItemList() {
   useFirestoreConnect([
     {
@@ -11,14 +13,25 @@ function ItemList() {
   ]);
 
   const items = useSelector(state => state.firestore.ordered.items);
+
   console.log(items);
-  
-  if (isLoaded(items)) {
+
+  const selectedItem = useSelector(state => state.selectedItem);
+
+console.log(selectedItem);
+  if (selectedItem) {
+    return (
+      
+      <ItemDetail/>
+    )
+  }
+  else if (isLoaded(items)) {
     console.log(items);
     return (
       <React.Fragment>
         {items.map((item) => {
           return <Item
+            item={item}
             title={item.title}
             category={item.category}
             content={item.description}

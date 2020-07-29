@@ -11,16 +11,8 @@ import vegan from './assets/imgs/vegan.png'
 import sulfate from './assets/imgs/sulfate.png'
 import derm from './assets/imgs/derm.png'
 import cruelty from './assets/imgs/cruelty.png'
-
 import React, { useState } from 'react';
-import {
-  Carousel,
-  CarouselItem,
-  CarouselControl,
-  CarouselIndicators,
-  CarouselCaption
-
-} from 'reactstrap';
+import {Carousel,CarouselItem,CarouselControl,CarouselIndicators,CarouselCaption} from 'reactstrap';
 
 const items = [
   {

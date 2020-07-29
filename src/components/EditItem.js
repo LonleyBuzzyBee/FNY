@@ -3,25 +3,28 @@ import PropTypes from 'prop-types';
 import { useFirestore } from 'react-redux-firebase';
 import React from 'react';
 import * as a from "../actions";
-import { connect } from "react-redux";
+import { connect, useDispatch } from "react-redux";
 
 
 
 function EditItem(props){
   const firestore = useFirestore();
-  const { dispatch } = props;
+  const dispatch = useDispatch();
   
   function editItemFormSubmission(event) {
     event.preventDefault();
     dispatch(a.editItem());
-
+    
     const propertiesToUpdate = {
-      title: event.target.title.value,
       category: event.target.category.value,
-      content: event.target.description.value,
-      img: event.target.img.value
+      description: event.target.description.value,
+      id: props.selectedItem.id,
+      img: event.target.img.value,
+      title: event.target.title.value
     }
-    return firestore.update({collection: 'items', doc: props.selectedItem }, propertiesToUpdate)
+    dispatch(a.selectedItem(propertiesToUpdate));
+    return firestore.update({ collection: 'items', doc: props.selectedItem.id }, propertiesToUpdate)
+    
   }
 
   return (
@@ -33,10 +36,10 @@ function EditItem(props){
   )
 }
 
-EditItem.propTypes = {
-  selectedItem: PropTypes.string,
-  editing: PropTypes.bool
-};
+// EditItem.propTypes = {
+//   selectedItem: PropTypes.obj,
+//   editing: PropTypes.bool
+// };
 
 const mapStateToProps = state => {
   return {

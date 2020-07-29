@@ -7,10 +7,12 @@ export const hideLanding = () => ({
 export const seeForm = () => ({
   type: 'SEE_FORM'
 });
-export const selectedItem = id => ({
+export const selectedItem = item => ({
   type: 'SELECTED_ITEM',
-  id
+  item
+ 
 });
 export const editItem = () => ({
   type: 'EDIT_ITEM'
+  
 });

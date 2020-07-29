@@ -1,7 +1,15 @@
 import React, { useState } from 'react';
 import logo from './assets/imgs/logoFNY.png'
 import ItemList from './ItemList';
+import CreateItem from './CreateItem';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+
 import {
   Collapse,
   Navbar,
@@ -23,26 +31,30 @@ const Header = () => {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <div>
+    <Router>
       <Navbar color="light" light expand="md">
         <NavbarBrand href="/"><img src={logo} alt="logo" width="50px" /></NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
             <NavItem>
-              <NavLink href="/components/">Components</NavLink>
+              <NavLink>
+                <Link to='/list'>Shop All</Link>
+              </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
+              
             </NavItem>
             <UncontrolledDropdown nav inNavbar>
               <DropdownToggle nav caret>
-                Options
+                Admin
               </DropdownToggle>
               <DropdownMenu right>
                 <DropdownItem>
-                  <p>list</p>
-                  {/* <a href="./ItemList">All Items</a> */}
+                <NavLink>
+                  <Link to='/create'>Create New Product</Link>
+               </NavLink>
+                 
                 </DropdownItem>
                 <DropdownItem>
                   Option 2
@@ -57,7 +69,21 @@ const Header = () => {
           <NavbarText>Simple Text</NavbarText>
         </Collapse>
       </Navbar>
-    </div>
+      <Switch>
+        <Route exact path="/list">
+        <ItemList/>
+        </Route>
+
+        <Route exact path="/create">
+        <CreateItem/>
+        </Route>
+
+        {/* <Route exact path="/edit">
+        <CreateItem/>
+        </Route> */}
+
+      </Switch>
+    </Router>
   );
 }
 
