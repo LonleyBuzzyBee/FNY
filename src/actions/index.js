@@ -7,6 +7,9 @@ export const hideLanding = () => ({
 export const seeForm = () => ({
   type: 'SEE_FORM'
 });
+export const isAdmin = () => ({
+  type: 'IS_ADMIN'
+});
 export const selectedItem = item => ({
   type: 'SELECTED_ITEM',
   item

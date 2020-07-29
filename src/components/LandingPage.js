@@ -12,6 +12,7 @@ import sulfate from './assets/imgs/sulfate.png'
 import derm from './assets/imgs/derm.png'
 import cruelty from './assets/imgs/cruelty.png'
 import React, { useState } from 'react';
+import { Button } from 'antd';
 import {Carousel,CarouselItem,CarouselControl,CarouselIndicators,CarouselCaption} from 'reactstrap';
 
 const items = [
@@ -131,7 +132,7 @@ const LandingPage = (props) => {
           <div className="introDiv">
             <img className="intro" src={logoInt} alt="fny logo" />
             <p className="intro-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad.</p>
-            <button>Shop Now</button>
+            <Button><a href="/list">Shop Now</a></Button>
           </div>
         </div>
       </main>

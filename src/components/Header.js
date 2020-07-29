@@ -39,9 +39,8 @@ const Header = () => {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
             <NavItem>
-              {/* <NavLink> */}
-                <Link to='/list'>Shop All</Link>
-              {/* </NavLink> */}
+                {/* <Link to='/list'>Shop All</Link> */}
+              <NavLink href='/list'>Shop All</NavLink>
             </NavItem>
             <NavItem>
               <NavLink href='/signin'>Sign In</NavLink>
@@ -70,7 +69,7 @@ const Header = () => {
           <NavbarText>Simple Text</NavbarText>
         </Collapse>
       </Navbar>
-      <Switch>
+      {/* <Switch>
         <Route exact path="/list">
         <ItemList/>
         </Route>
@@ -83,7 +82,7 @@ const Header = () => {
         <Signin/>
         </Route>
 
-      </Switch>
+      </Switch> */}
     </Router>
   );
 }

@@ -90,3 +90,22 @@ CarouselControl{
 .crueltyFreeLogos{
   width: 100px;
 }
+.listItemsContainer{
+  margin: 200px;
+}
+.listItems{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 50px;
+  /* grid-template-columns: 1fr 1fr 1fr; */
+}
+.listItem{
+  /* flex: calc(100% / 3); */
+  min-height: 100px;
+  line-height: 100px;
+  /* line-width: 100px; */
+  width: 400px;
+  background-color: white;
+  /* margin: 100px; */
+  padding: 40px;
+}
