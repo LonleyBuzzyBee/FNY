@@ -1,7 +1,8 @@
 import React from 'react';
 import Header from './Header';
 import LandingPage from './LandingPage';
-import ViewsControl from './ViewsControl.js';
+// import ViewsControl from './ViewsControl.js';
+// import Signin from "./Signin";
 import { BrowserRouter as Router,Switch, Route, Link} from "react-router-dom";
 
 
@@ -20,12 +21,3 @@ function App() {
 
 
 export default App;
-
-// function App() {
-//   return (
-//     <React.Fragment>
-//       <Header/>
-//       <ViewsControl/>
-//     </React.Fragment>
-//   )
-// }

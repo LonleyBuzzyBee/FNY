@@ -24,6 +24,7 @@ import {
   DropdownItem,
   NavbarText
 } from 'reactstrap';
+import Signin from './Signin';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -38,12 +39,12 @@ const Header = () => {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
             <NavItem>
-              <NavLink>
+              {/* <NavLink> */}
                 <Link to='/list'>Shop All</Link>
-              </NavLink>
+              {/* </NavLink> */}
             </NavItem>
             <NavItem>
-              
+              <NavLink href='/signin'>Sign In</NavLink>
             </NavItem>
             <UncontrolledDropdown nav inNavbar>
               <DropdownToggle nav caret>
@@ -51,9 +52,9 @@ const Header = () => {
               </DropdownToggle>
               <DropdownMenu right>
                 <DropdownItem>
-                <NavLink>
+                {/* <NavLink> */}
                   <Link to='/create'>Create New Product</Link>
-               </NavLink>
+               {/* </NavLink> */}
                  
                 </DropdownItem>
                 <DropdownItem>
@@ -78,9 +79,9 @@ const Header = () => {
         <CreateItem/>
         </Route>
 
-        {/* <Route exact path="/edit">
-        <CreateItem/>
-        </Route> */}
+        <Route exact path="/signin">
+        <Signin/>
+        </Route>
 
       </Switch>
     </Router>
