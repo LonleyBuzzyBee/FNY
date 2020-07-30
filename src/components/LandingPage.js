@@ -21,14 +21,14 @@ const items = [
     altText: 'Slide 1',
     width: "300px",
     height: "500px",
-    caption: 'Slide 1'
+    caption: 'SERUMS'
   },
   {
     src: `${ slide2 }`,
-    altText: 'Slide 2',
+    altText: 'SERUMS',
     width: "300px",
     height: "500px",
-    caption: 'Slide 2'
+    caption: 'SERUMS'
   },
 ];
 const items2 = [
@@ -37,14 +37,14 @@ const items2 = [
     altText: 'Slide 1',
     width: "300px",
     height: "500px",
-    caption: 'Slide 1'
+    caption: 'SKINCARE KITS'
   },
   {
     src: `${ slide4 }`,
     altText: 'Slide 2',
     width: "300px",
     height: "500px",
-    caption: 'Slide 2'
+    caption: 'SKINCARE KITS'
   },
 
 ];
@@ -54,14 +54,14 @@ const items3 = [
     altText: 'Slide 1',
     width: "300px",
     height: "500px",
-    caption: 'Slide 1'
+    caption: 'CLEANSERS'
   },
   {
     src: `${ slide6 }`,
     altText: 'Slide 2',
     width: "300px",
     height: "500px",
-    caption: 'Slide 2'
+    caption: 'CLEANSERS'
   },
 ];
 
@@ -95,7 +95,7 @@ const LandingPage = (props) => {
         key={item.src}
       >
         <img src={item.src} alt={item.altText} width={item.width} height={item.height}/>
-        <CarouselCaption  captionHeader={item.caption} />
+        <CarouselCaption style={{color:"black"}} captionHeader={item.caption} />
       </CarouselItem>
     );
   });
@@ -119,7 +119,7 @@ const LandingPage = (props) => {
         key={item.src}
       >
         <img src={item.src} alt={item.altText} width={item.width} height={item.height}/>
-        <CarouselCaption  />
+        <CarouselCaption captionHeader={item.caption} />
       </CarouselItem>
     );
   });
@@ -131,8 +131,8 @@ const LandingPage = (props) => {
         <div className="introDiv-border">
           <div className="introDiv">
             <img className="intro" src={logoInt} alt="fny logo" />
-            <p className="intro-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad.</p>
-            <Button><a href="/list">Shop Now</a></Button>
+            <h5 className="intro-p">Fresh New You</h5>
+            <button id="coverButton"><a id="landingLink"href="/list">SHOP NOW</a></button>
           </div>
         </div>
       </main>
@@ -172,6 +172,12 @@ const LandingPage = (props) => {
           <CarouselControl direction="next" directionText="Next" onClickHandler={next} />
         </Carousel>
       </section>
+
+      <div className="caroButtonSection">
+        <button className="caroButton b1">SHOP NOW</button>
+        <button className="caroButton b2">SHOP NOW</button>
+        <button className="caroButton">SHOP NOW</button>
+      </div>
 
       <section className="logos-section">
         <img className="crueltyFreeLogos" src={vegan} alt="crulty free logos" />

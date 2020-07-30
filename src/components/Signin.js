@@ -1,8 +1,12 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import firebase from "firebase/app";
+import * as a from "../actions";
+
 
 function Signin() { 
-  
+  const dispatch = useDispatch();
+
   function doSignUp(event) {
     event.preventDefault();
     const email = event.target.email.value;
@@ -23,6 +27,10 @@ function Signin() {
   }).catch(function(error) {
     console.log(error.message);
   });
+    
+    if (email === "admin@email.com" && password === "thisIsAdmin") {
+      dispatch(a.isAdmin());
+    }
   }
   
   function doSignOut() {

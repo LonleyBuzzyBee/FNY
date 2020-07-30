@@ -1,14 +1,8 @@
 import React, { useState } from 'react';
 import logo from './assets/imgs/logoFNY.png'
-import ItemList from './ItemList';
-import CreateItem from './CreateItem';
+// import { useSelector } from 'react-redux';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 
 import {
   Collapse,
@@ -24,65 +18,43 @@ import {
   DropdownItem,
   NavbarText
 } from 'reactstrap';
-import Signin from './Signin';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  //  const adminLoggedIn = useSelector(state => state.admin);
+
 
   const toggle = () => setIsOpen(!isOpen);
 
   return (
     <Router>
       <Navbar color="light" light expand="md">
-        <NavbarBrand href="/"><img src={logo} alt="logo" width="50px" /></NavbarBrand>
+        <NavbarBrand style={{ paddingRight: "100px" }} href="/"><img src={logo} alt="logo" width="80px" /></NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
-            <NavItem>
-                {/* <Link to='/list'>Shop All</Link> */}
-              <NavLink href='/list'>Shop All</NavLink>
+            <NavItem style={{ paddingRight: "100px" }}>
+              <NavLink href='/list'>SHOP ALL</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href='/signin'>Sign In</NavLink>
+              <NavLink style={{ paddingRight: "100px" }}href='/signin'>SIGN IN</NavLink>
             </NavItem>
-            <UncontrolledDropdown nav inNavbar>
+            <UncontrolledDropdown style={{ paddingLeft: "950px" }}nav inNavbar className="showDropDown">
+            {/* <UncontrolledDropdown nav inNavbar className={adminLoggedIn ? "showDropDown" : "hiddenAdminControls"}> */}
               <DropdownToggle nav caret>
-                Admin
+                ADMIN
               </DropdownToggle>
               <DropdownMenu right>
                 <DropdownItem>
-                {/* <NavLink> */}
-                  <Link to='/create'>Create New Product</Link>
-               {/* </NavLink> */}
-                 
-                </DropdownItem>
-                <DropdownItem>
-                  Option 2
-                </DropdownItem>
-                <DropdownItem divider />
-                <DropdownItem>
-                  Reset
+                  <NavLink href='/create'>CREAT NEW PRODUCT</NavLink>
                 </DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>
           </Nav>
-          <NavbarText>Simple Text</NavbarText>
+          {/* <NavbarText>Simple Text</NavbarText> */}
         </Collapse>
       </Navbar>
-      {/* <Switch>
-        <Route exact path="/list">
-        <ItemList/>
-        </Route>
-
-        <Route exact path="/create">
-        <CreateItem/>
-        </Route>
-
-        <Route exact path="/signin">
-        <Signin/>
-        </Route>
-
-      </Switch> */}
     </Router>
   );
 }

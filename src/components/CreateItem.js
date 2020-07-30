@@ -1,12 +1,17 @@
 import React from 'react';
 import ReusableForm from './ReusableForm';
 import * as a from "../actions";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector  } from "react-redux";
 import { app } from '../firebase';
 
 const db = app.firestore()
 
 function CreateItem() {
+
+  // const adminLoggedIn = useSelector(state => state.admin);
+ 
+ 
+ 
 
   const dispatch = useDispatch();
   dispatch(a.seeForm());
@@ -36,12 +41,13 @@ function CreateItem() {
   
   
   return(
-    <React.Fragment>
+    // <div className={adminLoggedIn ? "adminCreate" : "hiddenAdminControls"}>
+    <div className="adminCreate">
       <ReusableForm
         formSubmission={addItemToFirestore}
         importImage={handleImageAsFile}
       buttonText="Submit"/>
-   </React.Fragment>
+   </div>
   );
 }
 

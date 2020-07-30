@@ -1,10 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { useDispatch } from "react-redux";
+import * as a from "../actions";
 
 
 
 function ReusableForm(props) {
-
+ const dispatch = useDispatch();
   return (
     <React.Fragment>
 
@@ -32,6 +34,7 @@ function ReusableForm(props) {
         />
         <button type='submit'>Submit</button>
       </form>
+      <button ><a href='/list'>Back to list</a></button>
     </React.Fragment>
   );
 }

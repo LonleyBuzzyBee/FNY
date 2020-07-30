@@ -37,7 +37,7 @@ function EditItem(props){
 }
 
 // EditItem.propTypes = {
-//   selectedItem: PropTypes.obj,
+//   selectedItem: props.,
 //   editing: PropTypes.bool
 // };
 

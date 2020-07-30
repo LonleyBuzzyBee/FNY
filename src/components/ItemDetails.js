@@ -9,18 +9,12 @@ function ItemDetail(){
   const firestore = useFirestore(); 
   const dispatch = useDispatch();
 
+  // const adminLoggedIn = useSelector(state => state.admin);
 
   const selectedItem = useSelector(state => state.selectedItem);
   const editing = useSelector(state => state.editing);
   console.log("HERE IT IS", selectedItem);
 
-  // useFirestoreConnect([
-  //   {
-  //     collection: 'items',
-  //     doc: selectedItem
-  //   }
-  // ]);
-  
   
   function deletingItem(id) {
     firestore.delete({collection: 'items', doc: id});
@@ -28,32 +22,33 @@ function ItemDetail(){
   }
   console.log(selectedItem);
 
-  // const item = useSelector(state => state.firestore.ordered.items)[];
+  
   
   function editItem() {
-    dispatch(a.editItem());//edit-reducer set editing  
+    dispatch(a.editItem()); 
   }
   if (editing) {
     return (
       <EditItem selectedItem={selectedItem}/>
-      
     )
   }
   else if (isLoaded(selectedItem)) {
+    return (
+    <div className="itemDetailsContainer">
+      <div className="itemDetails">
+        <img src={selectedItem.img} className="itemDetailsImage"alt="img"/>
+        <h3><strong>{selectedItem.title}</strong></h3>
+        <p><em>{selectedItem.category}</em></p>
+        <p> {selectedItem.description} </p>
+        {/* <button className="adminEdit" onClick={editItem}>edit this thing</button> */}
+        <button className="adminDelete" onClick={() => deletingItem(selectedItem.id)}>Delete</button>
+        <button onClick={() => dispatch(a.selectedItem(null))}>Shop All</button>
+      </div>
+    </div>
+  );
+} else {
   return (
     <React.Fragment>
-        <h3>{selectedItem.title} - {selectedItem.category}</h3>
-        <p> {selectedItem.description} </p>
-   
-      <img src={selectedItem.img} alt="img"/>
-      <button onClick={editItem}>edit this thing</button>
-      <button onClick={() => deletingItem(selectedItem.id)}>delete this thing</button>
-      <button onClick={() => dispatch(a.selectedItem(null))}>go to list</button>
-    </React.Fragment>
-  );
-  } else {
-    return (
-      <React.Fragment>
         <h3>boop Loading...</h3>
       </React.Fragment>
     )
@@ -64,3 +59,7 @@ function ItemDetail(){
 
 
 export default ItemDetail;
+
+
+/* <button className={adminLoggedIn ? "adminEdit" : "hiddenAdminControls"} onClick={editItem}>edit this thing</button>
+<button className={adminLoggedIn ? "adminDelete" : "hiddenAdminControls"} onClick={() => deletingItem(selectedItem.id)}>delete this thing</button> */
