@@ -1,15 +1,16 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { useDispatch } from "react-redux";
-import * as a from "../actions";
+// import { useDispatch } from "react-redux";
+// import * as a from "../actions";
 
 
 
 function ReusableForm(props) {
- const dispatch = useDispatch();
+//  const dispatch = useDispatch();
   return (
-    <React.Fragment>
-
+    <div className="form">
+      <h3>CREATE NEW ITEM</h3>
+       <hr className="hrItem"></hr>
       <form onSubmit={props.formSubmission}>
         <input
           type='text'
@@ -21,7 +22,7 @@ function ReusableForm(props) {
           name='category'
           placeholder='Category'
         />
-        <input
+        <input className="fileButton"
           type='file'
           onChange={props.importImage}
           name='img'
@@ -32,10 +33,12 @@ function ReusableForm(props) {
           name='description'
           placeholder='Enter description here'
         />
-        <button type='submit'>Submit</button>
+        <div className="formButtons">
+          <button className="submitButton" type='submit'>Submit</button>
+          <button className="formListButton"><a href='/list'>Back to list</a></button>
+        </div>
       </form>
-      <button ><a href='/list'>Back to list</a></button>
-    </React.Fragment>
+    </div>
   );
 }
 

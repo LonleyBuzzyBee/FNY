@@ -37,12 +37,14 @@ function ItemDetail(){
     <div className="itemDetailsContainer">
       <div className="itemDetails">
         <img src={selectedItem.img} className="itemDetailsImage"alt="img"/>
+          <hr className="hrItem"></hr>
         <h3><strong>{selectedItem.title}</strong></h3>
-        <p><em>{selectedItem.category}</em></p>
+          <p><em>{selectedItem.category}</em></p>
+          <hr className="hrItem"></hr>
         <p> {selectedItem.description} </p>
         {/* <button className="adminEdit" onClick={editItem}>edit this thing</button> */}
-        <button className="adminDelete" onClick={() => deletingItem(selectedItem.id)}>Delete</button>
-        <button onClick={() => dispatch(a.selectedItem(null))}>Shop All</button>
+        <button className="adminDelete" onClick={() => deletingItem(selectedItem.id)}>DELETE</button>
+        <button className="listButton" onClick={() => dispatch(a.selectedItem(null))}>SHOP ALL</button>
       </div>
     </div>
   );

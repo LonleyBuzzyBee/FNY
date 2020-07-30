@@ -263,3 +263,98 @@ height: 250px;
 .itemDetailsImage{
   width: 500px;
 }
+.itemDetailsContainer{
+  margin-left: 450px;
+  padding:150px
+}
+.itemDetails{
+  background-color: white;
+  padding-bottom: 70px;
+  border-radius: 4px;
+  box-shadow: 5px 5px 10px #c8c8c8;
+  width: 50%;
+  padding:30px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  line-height: 50px;
+  text-align: center;
+}
+.adminDelete{
+  width: 100px;
+  height: 50px;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+.form{
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 5px 5px 7px #e0dfdf;
+  height: 800px;
+  width: 600px;
+  justify-content: center;
+  align-items: center;
+  display:flex;
+  flex-direction: column;
+}
+form{
+  flex-direction: column;
+  display:flex;
+}
+input{
+  width: 400px;
+  border:1px solid #fdc5c7;
+  margin-bottom:15px ;
+}
+textarea{
+  width: 400px;
+  border:1px solid #fdc5c7;
+  height: 150px;
+}
+button.formListButton{
+  width:150px !important;
+  height: 50px;
+  margin: 20px;
+  color: black;
+}
+.formButtons{
+  display: flex;
+  color: black;
+  flex-direction: row;
+  justify-content: center;
+}
+.submitButton{
+  margin: 20px;
+  width:100px!important;
+  height: 50px;
+}
+.adminCreate{
+  justify-content: center;
+  align-items: center;
+  display:flex;
+  padding-top:200px;
+  padding-bottom:200px;
+}
+.listButton{
+  width: 100px;
+  height: 50px;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+.userParent{
+display: flex;
+flex-direction: row;
+}
+.signIns{
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 5px 5px 7px #e0dfdf;
+  height: 400px;
+  width: 500px;
+  margin:50px;
+  padding:20px;
+  justify-content: center;
+  align-items: center;
+  display:flex;
+  flex-direction: column;
+}

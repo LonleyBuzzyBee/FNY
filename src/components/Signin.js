@@ -42,7 +42,8 @@ function Signin() {
 }
 
   return (
-    <React.Fragment>
+   <div className="userParent">
+    <div className="signIns">
       <h1>Sign up</h1>
       <form onSubmit={doSignUp}>
         <input
@@ -53,8 +54,11 @@ function Signin() {
           type='password'
           name='password'
           placeholder='Password' />
-        <button type='submit'>Sign up</button>
+        <button className="submitButton"  type='submit'>Sign up</button>
       </form>
+      </div>
+
+      <div className="signIns">
         <h1>Sign In</h1>
       <form onSubmit={doSignIn}>
         <input
@@ -65,11 +69,16 @@ function Signin() {
           type='password'
           name='signinPassword'
           placeholder='Password' />
-        <button type='submit'>Sign in</button>
-      </form>
-      <h1>Sign Out</h1>
-      <button onClick={doSignOut}>Sign out</button>
-    </React.Fragment>
+        <button className="submitButton"  type='submit'>Sign in</button>
+        </form>
+      </div>
+
+      <div className="signIns">
+        <h1>Sign Out</h1>
+        <button className="submitButton" onClick={doSignOut}>Sign out</button>
+      </div>
+
+  </div>
   );
 }
 
