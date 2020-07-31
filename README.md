@@ -5,7 +5,7 @@
 #### By _**Mai C.**_
 
 
-## Components Diagram
+## Screen Shots of the app
 
 <!-- [![diagram ](./public/img/Diagram_Tap_Room.png)] -->
 
