@@ -7,13 +7,18 @@
 
 ## Components Diagram
 
-[![diagram ](./public/img/Diagram_Tap_Room.png)]
+<!-- [![diagram ](./public/img/Diagram_Tap_Room.png)] -->
 
+![ screenshot ](./public/1.gif)
+![ screenshot ](./public/2.gif)
+![ screenshot ](./public/3.gif)
+![ screenshot ](./public/4.gif)
+![ screenshot ](./public/5.gif)
 
 
 ## Description
 
-_{This is a detailed description of your application. Its purpose and usage.  Give as much detail as needed to explain what the application does, and any other information you want users or other developers to have. }_
+_This app was created as a mock e commerce site for a fake skincare company called FNY_
 
 ## Project Specifications
 
@@ -38,9 +43,7 @@ _In Terminal:_
 * then ```npm build```
 * finally ```npm start```
 
-## Tasks
-* 8 - 9:30 ish readt through react strap, ant design and ui kit documentation
-* 3 look up doc on how to refactor to hooks
+
 ## Known Bugs
 
 _No known bugs at this time._
