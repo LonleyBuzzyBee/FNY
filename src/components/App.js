@@ -1,33 +1,18 @@
 import React from 'react';
-import Header from './Header';
-import LandingPage from './LandingPage';
-import ItemList from './ItemList';
-import Signin from "./Signin";
-import CreateItem from "./CreateItem";
-import { BrowserRouter as Router,Switch, Route} from "react-router-dom";
-// import { useSelector } from 'react-redux';
+import Routes from './Routes';
+import { BrowserRouter as Router} from "react-router-dom";
+import AuthProvider from './Routes/Auth'
+import '../Scss/main.scss';
 
-
-
-
-function App() {
-
-  // const adminLoggedIn = useSelector(state => state.admin);
+const App = () => {
 
   return (
-    <Router>
-      <Header />
-      <Switch>
-        <Route exact path='/' component={LandingPage} />
-        <Route exact path="/list" component={ItemList}/>
-        <Route exact path="/signin" component={Signin} />
-        {/* <div className={adminLoggedIn ? "adminCreate" : "hiddenAdminControls"}> */}
-          <Route exact path="/create" component={CreateItem} />
-        {/* </div> */}
-      </Switch>
-   </Router>
-  )
+    <AuthProvider>
+      <Router>
+        <Routes />
+      </Router>
+    </AuthProvider>
+  );
 }
-
 
 export default App;

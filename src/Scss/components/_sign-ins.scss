@@ -1,0 +1,43 @@
+.sign-ins-container{
+display: flex;
+justify-content: center;
+
+@include respond(phone){
+  background-color: white;
+}
+
+  &-inner{
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 5px 5px 7px #e0dfdf;
+    height: 500px;
+    width: 500px;
+    margin:100px;
+    padding: 50px 20px;
+    align-items: center;
+    display:flex;
+    flex-direction: column;
+    
+    @include respond(phone){
+      height: 100%;
+      width: 100%;
+      background-color: transparent;
+      border-radius: 4px;
+      box-shadow: none;
+
+      label{
+        width: 100%;
+        font-size:x-large;
+        text-align: center;
+      }
+    }
+
+    img{
+      width: 100px;
+      @include respond(phone){
+        width: 250px;
+        height: 250px;
+      }
+    }
+  }
+}

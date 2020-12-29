@@ -10,6 +10,10 @@ export const seeForm = () => ({
 export const isAdmin = () => ({
   type: 'IS_ADMIN'
 });
+export const updateCurrentUser = user => ({
+  type: 'UPDATE_USER',
+  user
+});
 export const selectedItem = item => ({
   type: 'SELECTED_ITEM',
   item

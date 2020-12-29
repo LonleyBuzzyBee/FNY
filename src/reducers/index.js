@@ -5,11 +5,13 @@ import editReducer from './edit-reducer';
 import isAdminReducer from './admin-reducer';
 import { combineReducers } from 'redux';
 import { firestoreReducer } from 'redux-firestore';
+import updateCurrentUserReducer from './current-user-reducer';
 
 const rootReducer = combineReducers({
   formVisibleOnPage: formVisibleReducer,
   editing: editReducer,
   selectedItem: selectedItemReducer,
+  currentUser: updateCurrentUserReducer,
   admin: isAdminReducer,
   firestore: firestoreReducer
 });

@@ -1,19 +1,20 @@
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import slide1 from './assets/imgs/blankDropper.jpg';
-import slide2 from './assets/imgs/blankDrooperMultiple.jpg';
-import slide3 from './assets/imgs/lotion.jpg';
-import slide4 from './assets/imgs/foamy.jpg';
-import slide5 from './assets/imgs/pinkMoistureStand.jpg'
-import slide6 from './assets/imgs/pinkMoisture.jpg'
-import logoInt from './assets/imgs/logoNoC.png'
-import vegan from './assets/imgs/vegan.png'
-import sulfate from './assets/imgs/sulfate.png'
-import derm from './assets/imgs/derm.png'
-import cruelty from './assets/imgs/cruelty.png'
+import slide1 from '../assets/imgs/blankDropper.jpg';
+import slide2 from '../assets/imgs/blankDrooperMultiple.jpg';
+import slide3 from '../assets/imgs/lotion.jpg';
+import slide4 from '../assets/imgs/foamy.jpg';
+import slide5 from '../assets/imgs/pinkMoistureStand.jpg'
+import slide6 from '../assets/imgs/pinkMoisture.jpg'
+import logoInt from '../assets/imgs/logoNoC.png'
+import vegan from '../assets/imgs/vegan.png'
+import sulfate from '../assets/imgs/sulfate.png'
+import derm from '../assets/imgs/derm.png'
+import cruelty from '../assets/imgs/cruelty.png'
 import React, { useState } from 'react';
+import Header from '../ReusableComponents/Header'
 import { Button } from 'antd';
-import {Carousel,CarouselItem,CarouselControl,CarouselIndicators,CarouselCaption} from 'reactstrap';
+import { Carousel, CarouselItem, CarouselControl, CarouselIndicators, CarouselCaption } from 'reactstrap';
 
 const items = [
   {
@@ -66,7 +67,7 @@ const items3 = [
 ];
 
 
-const LandingPage = (props) => {
+const LandingPage = ({currentUser}) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [animating, setAnimating] = useState(false);
 
@@ -127,6 +128,7 @@ const LandingPage = (props) => {
 
   return (
     <div>
+         <Header/>
       <main className="landingMain">
         <div className="introDiv-border">
           <div className="introDiv">
@@ -186,11 +188,10 @@ const LandingPage = (props) => {
         <img className="crueltyFreeLogos" src={derm} alt="crulty free logos" />
         
       </section>
-
+    {/* </Layout> */}
     </div>
     
   );
 }
-
 
 export default LandingPage;
