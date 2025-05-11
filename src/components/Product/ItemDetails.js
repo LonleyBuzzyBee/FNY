@@ -1,5 +1,5 @@
-import React,{ useState, useContext, useEffect }  from "react";
-import { useFirestore, useFirestoreConnect, isLoaded } from 'react-redux-firebase';
+import React  from "react";
+import { useFirestore, isLoaded } from 'react-redux-firebase';
 import StarRatings from 'react-star-ratings';
 import EditItem from '../AdminOptions/EditItem';
 import * as a from "../../actions";

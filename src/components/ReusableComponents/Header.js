@@ -19,7 +19,7 @@ const Header = () => {
   const user = useSelector(state => state.currentUser);
   const isAdmin = useSelector(state => state.admin);
 
-  if( user !== null && isAdmin == true) {
+  if( user !== null && isAdmin === true) {
     return (
       <>
           <Navbar color="light" light >

@@ -13,7 +13,6 @@ import derm from '../assets/imgs/derm.png'
 import cruelty from '../assets/imgs/cruelty.png'
 import React, { useState } from 'react';
 import Header from '../ReusableComponents/Header'
-import { Button } from 'antd';
 import { Carousel, CarouselItem, CarouselControl, CarouselIndicators, CarouselCaption } from 'reactstrap';
 
 const items = [
